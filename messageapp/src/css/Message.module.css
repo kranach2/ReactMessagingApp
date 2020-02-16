@@ -5,44 +5,49 @@
     box-sizing: border-box;
 }
 :local(.container){
-    position: relative;
     width:100%;
         height: 100vh;
         background-image: linear-gradient(rgba(162, 155, 254, 0.5), rgba(108, 92, 231, 0.8), rgba(9, 132, 227,0.5));
         background-size: cover;
         filter: grayscale(0%);
+
+}
+
+:local(.main){
+    display:grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 50px 400px 30px 50px;
+    justify-content: center;
 }
 
 :local(.heading){
-    margin-top: 10px;
+    border:1px solid black;
+    background-color: #74b9ff;
+    color:white;
     text-align: center;
 }
 
 :local(.message_container){
+    background-image: linear-gradient(rgba(223, 230, 233, 0.5), rgba(178, 190, 195, 0.8), rgba(99, 110, 114, 0.5));
     display:flex;
     flex-direction: column-reverse;
-    width:100%;
-    height: 400px;
-    margin-top: 10px;
-    border: 1px solid black;
     overflow: scroll;
-    border-radius: 10px;
     padding:10px;
+    border:1px solid black;
 }
+
 :local(.incoming),
 :local(.outgoing){
 display:grid;
 grid-template-columns: 70%;
-margin-bottom: 5px;
-
+margin-bottom: 8px;
 }
    
 :local(.outgoing){
     justify-content: end;
-    justify-items: end;
-    
-    
+    justify-items: end;   
 }
+
 :local(.incoming){
     justify-content: start;
     justify-items: start;
@@ -50,7 +55,7 @@ margin-bottom: 5px;
 }
 
 :local(.others_list){
-padding:5px;
+padding:6px;
 font-family: 'Lato', sans-serif;
 font-size: 16px;
 background-color: #b2bec3;
@@ -59,7 +64,7 @@ margin-bottom: 3px;
 }
 
 :local(.own_list){
-padding:5px;
+padding:6px;
 font-family: 'Lato', sans-serif;
 font-size: 16px;
 color:white;
@@ -67,29 +72,33 @@ background-color:#0984e3;
 border-radius: 5px;
 margin-bottom: 3px;
 }
+
 :local(.extra_list){
     font-family: 'Lato', sans-serif;
     font-size: 12px;
-    color:#636e72;
+    color:#6c5ce7;
 }
+
 :local(.typingAlert){
-    margin-top: 5px;
     padding:3px;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
-    color:#b2bec3;
+    color:#2d3436;
 }
+
 :local(.input_div){
-    margin-top: 20px;
-    text-align: center;
     font-family: 'Lato', sans-serif;
 }
 
-:local(.main_div){
-    display: flex;
-    justify-content: center;
+
+:local(.input){
+    border:1px solid black;
+    border-radius: 5px;
+    width:230px;
+    height:50px;
 }
 :local(.button){
-    margin-top: 25px;
-    text-align: center;
+    width:68px;
+    height:50px;
+    
 }

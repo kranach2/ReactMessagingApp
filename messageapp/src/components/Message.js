@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import io from "socket.io-client";
 import style from "../css/Message.module.css";
-import {Container, Button, FormGroup, Col, Input} from "reactstrap";
+import { Button} from "reactstrap";
 import { uuid } from 'uuidv4';
 import moment from "moment";
 const socket = io('https://react-chatter-app.herokuapp.com/');
@@ -63,21 +63,14 @@ handleKey=()=>{
         
         return (
             
+
             <div className={style.container}>
-                
-                <Container>
-                
+                <div className={style.main}>
                 <div className={style.heading}>
                     <h1>{this.state.name}</h1>
-                    
                     </div>
-                    
-                <div className={style.message_div} > 
-                <div className={style.message_container}>
-        
-        
-
-                   {   this.state.dataStore.map((data)=>{
+                    <div className={style.message_container}>
+                    {   this.state.dataStore.map((data)=>{
 let currentUser=false;
 if(this.state.name===data.name){
     currentUser =true;
@@ -102,26 +95,19 @@ if(this.state.name===data.name){
                    )}) 
                 }
                   
+                    </div>
+                    <div className={style.typingAlert}>{this.state.typingAlert}</div>
+
+                    <div className={style.input_div}>
+                         <input className={style.input} onChange={this.handleChange}  onKeyPress={this.handleKey} type="text" name="message" placeholder="Type..." value = {this.state.message}/>
+                         <Button className={style.button} onClick ={this.handleSubmit}color="primary" type="submit">Send</Button>
+</div>
                 </div>
 
-                
-                <div className={style.typingAlert}>{this.state.typingAlert}</div>
-                </div>
-                <div className={style.main_div}>
-<div className={style.input_div}>
-<FormGroup row>
-        <Col sm={10}>
-          <Input  onChange={this.handleChange}  onKeyPress={this.handleKey} type="message" name="message" id="messageExample" placeholder="Type..." value = {this.state.message} bsSize="lg" />
-        </Col>
-      </FormGroup>
-</div>
-<div className={style.button}>
-    <Button onClick ={this.handleSubmit}color="primary" type="submit">Send</Button>
-</div>
-</div>
-</Container>
+
 
             </div>
+             
         )
     }
 }

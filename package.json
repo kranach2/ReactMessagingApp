@@ -4,7 +4,7 @@
   "description": "Messaging App",
   "main": "server.js",
   "scripts": {
-    "start" : "node server.js",
+    "start": "node server.js",
     "heroku-postbuild": "cd messageapp && npm install && npm run build"
   },
   "author": "Kishor Rana Chhetri",
