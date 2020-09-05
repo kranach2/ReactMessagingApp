@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import {Button} from "reactstrap";
+import Logo from "./Logo"
 import style from "../css/Welcome.module.css";
 
  class WelcomePage extends Component {
@@ -8,6 +9,7 @@ import style from "../css/Welcome.module.css";
         return (
             <div className={style.wpage_container}>
                 <div className={style.heading}>Chatter</div>
+                <div><Logo /></div>
                 <div className={style.grid_div}>
                     <div>
                     <Link to = "/signup"><Button  onClick={this.props.handleClick} color="primary">Sign Up</Button></Link>
@@ -21,3 +23,4 @@ import style from "../css/Welcome.module.css";
     }
 }
 export default  WelcomePage;
+

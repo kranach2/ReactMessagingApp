@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400i&display=swap');
+
+:local(.text){
+    font-size: 8px;
+      font-family: 'Lato', serif;
+      letter-spacing: 2px;
+}
+:local(.innerCircle){
+    stroke-width: 2px;
+}
+:local(.outerCircle){
+    stroke-width: 2px;
+}
